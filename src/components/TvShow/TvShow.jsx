@@ -39,19 +39,18 @@ const StvShow = styled.div`
     ::before {
       width: 80%;
       height: 90%;
-      border-left: 2px solid white;
-      border-right: 2px solid white;
+      border-left: 2px solid #e50914;
+      border-right: 2px solid #e50914;
       transform: scaleY(0);
     }
 
     ::after {
       width: 90%;
       height: 80%;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
+      border-top: 2px solid #e50914;
+      border-bottom: 2px solid #e50914;
       transform: scaleX(0);
     }
-
     &:hover {
       opacity: 1;
       ::before {
