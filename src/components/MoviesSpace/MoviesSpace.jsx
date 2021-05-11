@@ -1,5 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+
+const SMoviesSpace = styled.div`
+  ul {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+  }
+`;
 
 function MoviesSpace() {
   const [moviesSpace, setMoviesSpace] = useState([]);
@@ -15,7 +24,7 @@ function MoviesSpace() {
   }, []);
 
   return (
-    <>
+    <SMoviesSpace>
       <ul>
         {moviesSpace.map((movie) => {
           return (
@@ -30,7 +39,7 @@ function MoviesSpace() {
           );
         })}
       </ul>
-    </>
+    </SMoviesSpace>
   );
 }
 
