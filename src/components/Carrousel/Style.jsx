@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SCarrousel = styled.div`
   width: 80vw;
-  padding-top: 80px;
+  padding-top: 20px;
   margin: auto;
 
   img {

@@ -40,14 +40,22 @@ const SHeader = styled.header`
     img {
       height: 120px;
     }
-    p {
+    .mars-mode {
       font-size: 35px;
       font-weight: bold;
       position: absolute;
       top: 26px;
+      &:hover {
+        color: rgb(229, 9, 20);
+      }
     }
-    &:hover {
-      color: rgb(229, 9, 20);
+    .earth-mode {
+      font-size: 35px;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      transform: rotate(-45deg);
+      line-height: 170%;
     }
   }
 `;
