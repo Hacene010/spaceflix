@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SMoviesSpace from '../StyledComponents/Smovies';
+import { Link } from 'react-router-dom';
 
 function MoviesSpace() {
   const [moviesSpace, setMoviesSpace] = useState([]);
@@ -35,15 +36,17 @@ function MoviesSpace() {
         {moviesSpace.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <li>
-                <div className='image'>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    alt=''
-                  />
-                  <figcaption>{movie.original_title}</figcaption>
-                </div>
-              </li>
+              <Link to={`/${movie.id}`}>
+                <li>
+                  <div className='image'>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt=''
+                    />
+                    <figcaption>{movie.original_title}</figcaption>
+                  </div>
+                </li>
+              </Link>
             </>
           );
         })}
