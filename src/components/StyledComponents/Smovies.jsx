@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SMoviesSpace = styled.div`
+const SMovies = styled.div`
   ul {
     position: relative;
     flex-wrap: nowrap;
@@ -12,6 +12,11 @@ const SMoviesSpace = styled.div`
 
   img {
     width: 100%;
+    border-radius: 7px;
+  }
+  li {
+    padding-right: 1px;
+    padding-left: 1px;
   }
 
   .arrow {
@@ -24,14 +29,18 @@ const SMoviesSpace = styled.div`
     position: absolute;
     bottom: 0;
     top: 0;
-    right: 10px;
+    right: 0;
+    width: 30px;
 
     :hover {
       background: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.65) 100%
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.85) 100%
       );
+    }
+    path {
+      fill: white;
     }
   }
 
@@ -41,33 +50,37 @@ const SMoviesSpace = styled.div`
     position: absolute;
     bottom: 0;
     top: 0;
-    left: 10px;
+    left: 0;
     z-index: 0;
+    width: 30px;
     :hover {
       background: linear-gradient(
         to left,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.65) 100%
+        rgba(0, 0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.85) 100%
       );
-      z-index: 0;
+    }
+    path {
+      fill: white;
     }
   }
   figcaption {
-    margin-right: 30px;
-    margin-left: 30px;
+    margin-left: 40px;
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 100%;
     top: 0;
-    background-color: #0008;
+
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: 0.2s all ease-in-out;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
     color: white;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
 
     ::before,
     ::after {
@@ -77,7 +90,7 @@ const SMoviesSpace = styled.div`
     }
 
     ::before {
-      width: 80%;
+      width: 100%;
       height: 90%;
       border-left: 2px solid #e50914;
       border-right: 2px solid #e50914;
@@ -85,8 +98,8 @@ const SMoviesSpace = styled.div`
     }
 
     ::after {
-      width: 90%;
-      height: 80%;
+      width: 100%;
+      height: 90%;
       border-top: 2px solid #e50914;
       border-bottom: 2px solid #e50914;
       transform: scaleX(0);
@@ -104,4 +117,4 @@ const SMoviesSpace = styled.div`
   }
 `;
 
-export default SMoviesSpace;
+export default SMovies;

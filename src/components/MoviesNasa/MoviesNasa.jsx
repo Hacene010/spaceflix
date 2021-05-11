@@ -1,72 +1,10 @@
-import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
-const SMoviesNasa = styled.div`
-  ul {
-    display: flex;
-    list-style-type: none;
-    text-align: center;
-    margin-top: 5vh;
-  }
-
-  li {
-    position: relative;
-  }
-
-  figcaption {
-    position: absolute;
-    width: 500px;
-    height: 285px;
-
-    bottom: 0;
-    background-color: #0008;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: 0.2s all ease-in-out;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-
-    ::before,
-    ::after {
-      content: '';
-      position: absolute;
-      transition: 0.5s all ease-in-out;
-    }
-
-    ::before {
-      width: 80%;
-      height: 90%;
-      border-left: 2px solid #e50914;
-      border-right: 2px solid #e50914;
-      transform: scaleY(0);
-    }
-
-    ::after {
-      width: 90%;
-      height: 80%;
-      border-top: 2px solid #e50914;
-      border-bottom: 2px solid #e50914;
-      transform: scaleX(0);
-    }
-
-    &:hover {
-      opacity: 1;
-      ::before {
-        transform: scaleY(1);
-      }
-      ::after {
-        transform: scaleX(1);
-      }
-    }
-  }
-`;
+import SMoviesNasa from '../StyledComponents/Smovies';
 
 function MoviesNasa() {
   const [moviesNasa, setMoviesNasa] = useState([]);
+  const [startX, setStartX] = useState(0);
 
   useEffect(() => {
     axios
@@ -78,21 +16,46 @@ function MoviesNasa() {
       });
   }, []);
 
+  const slideShowPlus = () => {
+    setStartX(startX + 1);
+  };
+
+  const slideShowMinus = () => {
+    setStartX(startX - 1);
+  };
+
   return (
     <SMoviesNasa>
       <ul>
-        {moviesNasa.map((movie) => {
+        {startX > 0 && (
+          <button className='arrowLeft' onClick={slideShowMinus}>
+            <svg width='24' height='24' viewBox='0 0 24 24'>
+              <path d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z'></path>
+            </svg>
+          </button>
+        )}
+        {moviesNasa.slice(startX, startX + 5).map((movie) => {
           return (
-            <li>
-              {' '}
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                alt=''
-              />
-              <figcaption>{movie.original_title}</figcaption>
-            </li>
+            <>
+              <li>
+                <div className='image'>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                    alt=''
+                  />
+                  <figcaption>{movie.original_title}</figcaption>
+                </div>
+              </li>
+            </>
           );
         })}
+        {startX < 14 && (
+          <button className='arrowRight' onClick={slideShowPlus}>
+            <svg width='24' height='24' viewBox='0 0 24 24'>
+              <path d='M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z'></path>
+            </svg>
+          </button>
+        )}
       </ul>
     </SMoviesNasa>
   );
