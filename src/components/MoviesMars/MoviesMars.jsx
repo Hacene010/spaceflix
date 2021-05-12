@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import SMoviesMars from '../StyledComponents/Smovies';
 import { Link } from 'react-router-dom';
 
@@ -41,7 +40,6 @@ function MoviesMars() {
           return (
             <>
               <Link to={`/movies/${movie.id}`}>
-
                 <li>
                   <div className='image'>
                     <img

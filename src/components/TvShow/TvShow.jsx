@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StvShow from '../StyledComponents/Smovies';
-import { Link } from 'react-router-dom';
 
 function TvShow() {
   const [TvShow, setTvShow] = useState([]);
@@ -41,7 +40,6 @@ function TvShow() {
           return (
             <>
               <Link to={`/tvshow/${movie.id}`}>
-
                 <li>
                   <div className='image'>
                     <img
