@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SHeader from './Style.jsx';
 
 export default function Header({ theme, setTheme }) {
@@ -7,7 +8,9 @@ export default function Header({ theme, setTheme }) {
   return (
     <SHeader>
       {theme === 'earth' ? (
-        <img src='/img/header/logoRouge.png' alt='logo' />
+        <Link to='/'>
+          <img src='/img/header/logoRouge.png' alt='logo' />
+        </Link>
       ) : (
         <img src='/img/header/logoNoir.png' alt='logo' />
       )}
@@ -25,7 +28,7 @@ export default function Header({ theme, setTheme }) {
               className='planete'
               src='/img/header/planetemars.png'
               alt='planet-mars'
-            />{' '}
+            />
             <p className='mars-mode'>Mars Mode</p>
           </>
         ) : (
