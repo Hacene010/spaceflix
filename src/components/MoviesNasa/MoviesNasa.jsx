@@ -40,6 +40,7 @@ function MoviesNasa() {
           return (
             <>
               <Link to={`/movies/${movie.id}`}>
+
                 <li>
                   <div className='image'>
                     <img
