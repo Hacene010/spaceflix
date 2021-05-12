@@ -4,7 +4,7 @@ const SMovieDetails = styled.div`
   color: #f7f5f5;
   .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   h2 {
@@ -25,6 +25,9 @@ const SMovieDetails = styled.div`
 
     .desc {
       font-size: 1.9em;
+    }
+    button {
+      background-color: yellow;
     }
   }
 `;

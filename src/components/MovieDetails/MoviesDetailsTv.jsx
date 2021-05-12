@@ -5,7 +5,7 @@ import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import SMovieDetails from './SMovieDetails';
 
-export default function MoviesDetails() {
+export default function MoviesDetailsTv() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
   const { id } = useParams();
@@ -14,7 +14,7 @@ export default function MoviesDetails() {
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=c909c07c7f46d4427d96a475dcb11666&language=en-US`
+        `https://api.themoviedb.org/3/tv/${id}?api_key=c909c07c7f46d4427d96a475dcb11666&language=en-US`
       )
       .then(({ data }) => {
         setMovies(data);
@@ -55,10 +55,10 @@ export default function MoviesDetails() {
     <SMovieDetails>
       <div className='container'>
         <div className='title-img'>
-          <h2>{movies.original_title}</h2>
+          <h2>{movies.name}</h2>
           <img
             src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-            alt='avenger'
+            alt=''
           />
         </div>
         <div className='movie-infos'>
@@ -71,7 +71,7 @@ export default function MoviesDetails() {
           </p>
           <p>Popularity : {movies.popularity}</p>
           <p>Score : {movies.vote_average}</p>
-          {movies.release_date && <p>Release date: {movies.release_date}</p>}
+          {movies.last_air_date && <p>Release date: {movies.last_air_date}</p>}
           <button onClick={() => hadleClick()}>See the Trailer</button>
           {trailerUrl && <YouTube videoId={trailerUrl} />}
         </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import StvShow from '../StyledComponents/Smovies';
+import { Link } from 'react-router-dom';
 
 function TvShow() {
   const [TvShow, setTvShow] = useState([]);
@@ -27,6 +28,7 @@ function TvShow() {
 
   return (
     <StvShow>
+      <h2>TV Show</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -38,14 +40,15 @@ function TvShow() {
         {TvShow.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <Link to={`/${movie.id}`}>
+              <Link to={`/tvshow/${movie.id}`}>
+
                 <li>
                   <div className='image'>
                     <img
                       src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                       alt=''
                     />
-                    <figcaption>{movie.original_title}</figcaption>
+                    <figcaption>{movie.original_name}</figcaption>
                   </div>
                 </li>
               </Link>

@@ -27,6 +27,7 @@ function MoviesNasa() {
 
   return (
     <SMoviesNasa>
+      <h2>Movies Nasa</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -38,7 +39,8 @@ function MoviesNasa() {
         {moviesNasa.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <Link to={`/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`}>
+
                 <li>
                   <div className='image'>
                     <img

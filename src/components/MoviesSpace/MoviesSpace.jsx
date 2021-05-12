@@ -27,6 +27,7 @@ function MoviesSpace() {
 
   return (
     <SMoviesSpace>
+      <h2>Movies Space</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -38,7 +39,7 @@ function MoviesSpace() {
         {moviesSpace.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <Link to={`/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`}>
                 <li>
                   <div className='image'>
                     <img

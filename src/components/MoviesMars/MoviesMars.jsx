@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SMoviesMars from '../StyledComponents/Smovies';
+import { Link } from 'react-router-dom';
 
 function MoviesMars() {
   const [moviesMars, setMoviesMars] = useState([]);
@@ -27,6 +28,7 @@ function MoviesMars() {
 
   return (
     <SMoviesMars>
+      <h2>Movies Mars</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -38,7 +40,8 @@ function MoviesMars() {
         {moviesMars.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <Link to={`/${movie.id}`}>
+              <Link to={`/movies/${movie.id}`}>
+
                 <li>
                   <div className='image'>
                     <img
