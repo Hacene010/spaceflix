@@ -8,6 +8,7 @@ import MoviesMars from './components/MoviesMars/MoviesMars';
 import TvShow from './components/TvShow/TvShow';
 import Carrousel from './components/Carrousel/Carroussel';
 import MoviesDetails from './components/MovieDetails/MoviesDetails';
+import MoviesDetailsTv from './components/MovieDetails/MoviesDetailsTv';
 import './reset.css';
 import { SApp } from './SApp.jsx';
 import { GlobalStyles, EarthTheme, MarsTheme } from './components/GlobalStyles';
@@ -32,8 +33,11 @@ function App() {
               <MoviesNasa />
               <MoviesMars />
             </Route>
-            <Route path='/:id'>
+            <Route path='/movies/:id'>
               <MoviesDetails />
+            </Route>
+            <Route path='/tvshow/:id'>
+              <MoviesDetailsTv />
             </Route>
           </SApp>
         </ThemeProvider>

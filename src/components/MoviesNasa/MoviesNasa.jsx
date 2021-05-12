@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SMoviesNasa from '../StyledComponents/Smovies';
+import { Link } from 'react-router-dom';
 
 function MoviesNasa() {
   const [moviesNasa, setMoviesNasa] = useState([]);
@@ -26,6 +27,7 @@ function MoviesNasa() {
 
   return (
     <SMoviesNasa>
+      <h2>Movies Nasa</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -37,15 +39,17 @@ function MoviesNasa() {
         {moviesNasa.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <li>
-                <div className='image'>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    alt=''
-                  />
-                  <figcaption>{movie.original_title}</figcaption>
-                </div>
-              </li>
+              <Link to={`/movies/${movie.id}`}>
+                <li>
+                  <div className='image'>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt=''
+                    />
+                    <figcaption>{movie.original_title}</figcaption>
+                  </div>
+                </li>
+              </Link>
             </>
           );
         })}

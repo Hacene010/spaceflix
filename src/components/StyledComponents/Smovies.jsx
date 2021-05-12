@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
 const SMovies = styled.div`
+  h2 {
+    font-size: 1.7em;
+    margin-left: 20px;
+  }
   ul {
     position: relative;
     flex-wrap: nowrap;
     display: flex;
-    list-style-type: none;
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
 
   img {
