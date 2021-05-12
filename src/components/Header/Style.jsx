@@ -58,6 +58,10 @@ const SHeader = styled.header`
       line-height: 170%;
     }
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default SHeader;

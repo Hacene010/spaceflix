@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
+import DocumentarySpace from './components/DocumentarySpace/DocumentarySpace';
 import MoviesSpace from './components/MoviesSpace/MoviesSpace';
 import MoviesNasa from './components/MoviesNasa/MoviesNasa';
 import MoviesMars from './components/MoviesMars/MoviesMars';
@@ -29,9 +30,10 @@ function App() {
             <Route exact path='/'>
               <Carrousel />
               <MoviesSpace />
-              <TvShow />
               <MoviesNasa />
               <MoviesMars />
+              <DocumentarySpace />
+              <TvShow />
             </Route>
             <Route path='/movies/:id'>
               <MoviesDetails />
