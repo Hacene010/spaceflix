@@ -1,21 +1,26 @@
 import styled from 'styled-components';
 
 const SMovieDetails = styled.div`
-  color: #f7f5f5;
   .container {
     display: flex;
     justify-content: space-evenly;
   }
-
+  .title-img {
+    img {
+      padding-top: 10px;
+      height: 650px;
+    }
+  }
   h2 {
+    text-align: center;
     font-weight: 700;
     font-size: 2.5em;
-    padding: 10px;
+    padding: 20px;
   }
 
   .movie-infos {
     width: 30vw;
-    padding-top: 200px;
+    padding-top: 80px;
     margin-left: 20px;
 
     p {
@@ -26,8 +31,8 @@ const SMovieDetails = styled.div`
     .desc {
       font-size: 1.9em;
     }
-    button {
-      background-color: yellow;
+    .youtube {
+      padding-top: 25px;
     }
   }
 `;

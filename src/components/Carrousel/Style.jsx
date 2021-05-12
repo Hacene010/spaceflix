@@ -5,6 +5,10 @@ const SCarrousel = styled.div`
   padding-top: 20px;
   margin: auto;
 
+  .each-slideshow-indicator::before {
+    background: ${({ theme }) => theme.fontColor || 'yellowgreen'};
+  }
+
   img {
     height: 75vh;
     width: 100%;

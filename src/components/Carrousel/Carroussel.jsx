@@ -11,9 +11,9 @@ const properties = {
   arrow: true,
 };
 
-function Carrousel() {
+function Carrousel({ theme }) {
   return (
-    <SCarrousel className='container'>
+    <SCarrousel className='container' theme={theme}>
       <Slide {...properties}>
         <div className='slide'>
           <img src='/img/carrousel/gravity.jpg' alt='img1' />

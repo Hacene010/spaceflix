@@ -12,7 +12,9 @@ export default function Header({ theme, setTheme }) {
           <img src='/img/header/logoRouge.png' alt='logo' />
         </Link>
       ) : (
-        <img src='/img/header/logoNoir.png' alt='logo' />
+        <Link to='/'>
+          <img src='/img/header/logoNoir.png' alt='logo' />
+        </Link>
       )}
       <div className='navbar'>
         <ul className='categories'>

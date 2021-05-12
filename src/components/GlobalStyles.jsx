@@ -6,12 +6,7 @@ body {
   min-height: 100vh;
   font-family: 'Bebas Neue', cursive;
   color: ${({ theme }) => theme.fontColor};
-  }
-  .each-slideshow-indicator::before {
-    background: ${({ theme }) => theme.fontColor};
-  }
-  transition: all 0.5s ease;
-
+  transition: all 0.6s ease;
 }`;
 
 export const EarthTheme = {

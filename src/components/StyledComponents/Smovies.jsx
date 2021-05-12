@@ -96,16 +96,16 @@ const SMovies = styled.div`
     ::before {
       width: 100%;
       height: 90%;
-      border-left: 2px solid #e50914;
-      border-right: 2px solid #e50914;
+      border-left: 2px solid rgb(229, 9, 20);
+      border-right: 2px solid rgb(229, 9, 20);
       transform: scaleY(0);
     }
 
     ::after {
       width: 100%;
       height: 90%;
-      border-top: 2px solid #e50914;
-      border-bottom: 2px solid #e50914;
+      border-top: 2px solid rgb(229, 9, 20);
+      border-bottom: 2px solid rgb(229, 9, 20);
       transform: scaleX(0);
     }
 

@@ -27,7 +27,7 @@ function App() {
             <GlobalStyles />
             <Header theme={theme} setTheme={setTheme} />
             <Route exact path='/'>
-              <Carrousel />
+              <Carrousel theme={theme} />
               <MoviesSpace />
               <TvShow />
               <MoviesNasa />
