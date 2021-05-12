@@ -28,12 +28,7 @@ export default function MoviesDetails() {
 
   function trailerOnLoad() {
     if (!trailerUrl) {
-      const name =
-        movies?.name ||
-        movies?.original_name ||
-        movies?.title ||
-        movies?.original_title ||
-        'Dogma';
+      const name = movies?.original_title || 'H2G2';
       movieTrailer(name).then((url) => {
         const urlParams = new URLSearchParams(new URL(url).search);
         setTrailerUrl(urlParams.get('v'));
