@@ -27,7 +27,7 @@ function MoviesNasa() {
 
   return (
     <SMoviesNasa>
-      <h2>Movies Nasa</h2>
+      <h2 id='MoviesNasa'>Movies Nasa</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>
@@ -40,7 +40,6 @@ function MoviesNasa() {
           return (
             <>
               <Link to={`/movies/${movie.id}`}>
-
                 <li>
                   <div className='image'>
                     <img

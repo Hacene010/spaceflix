@@ -27,7 +27,7 @@ function TvShow() {
 
   return (
     <StvShow>
-      <h2>TV Show</h2>
+      <h2 id='TvShow'>TV Show</h2>
       <ul>
         {startX > 0 && (
           <button className='arrowLeft' onClick={slideShowMinus}>

@@ -64,6 +64,10 @@ const SHeader = styled.header`
       margin-right: 10px;
     }
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default SHeader;
