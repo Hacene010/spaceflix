@@ -6,9 +6,10 @@ const SMovieDetails = styled.div`
     display: flex;
     justify-content: center;
   }
+
   h2 {
-    font-weight: 800;
-    font-size: 2.3em;
+    font-weight: 700;
+    font-size: 2.5em;
     padding: 10px;
   }
 
@@ -19,6 +20,7 @@ const SMovieDetails = styled.div`
 
     p {
       padding: 5px;
+      font-size: 25px;
     }
 
     .desc {
