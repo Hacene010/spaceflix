@@ -37,9 +37,14 @@ const SHeader = styled.header`
     outline: inherit;
     background-color: transparent;
     position: relative;
-    img {
+    .planete {
       height: 120px;
     }
+    .barre {
+      height: 120px;
+      transform: rotate(90deg);
+    }
+
     .mars-mode {
       font-size: 35px;
       font-weight: bold;
@@ -53,9 +58,10 @@ const SHeader = styled.header`
       font-size: 35px;
       font-weight: bold;
       position: absolute;
-      top: 5px;
-      transform: rotate(-45deg);
+      top: 1px;
+      transform: rotate(45deg);
       line-height: 170%;
+      margin-right: 10px;
     }
   }
   a {

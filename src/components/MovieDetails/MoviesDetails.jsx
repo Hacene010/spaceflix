@@ -24,6 +24,23 @@ export default function MoviesDetails() {
       });
   }, [id]);
 
+  useEffect(trailerOnLoad, [movies, trailerUrl]);
+
+  function trailerOnLoad() {
+    if (!trailerUrl) {
+      const name =
+        movies?.name ||
+        movies?.original_name ||
+        movies?.title ||
+        movies?.original_title ||
+        'Dogma';
+      movieTrailer(name).then((url) => {
+        const urlParams = new URLSearchParams(new URL(url).search);
+        setTrailerUrl(urlParams.get('v'));
+      });
+    }
+  }
+
   if (error) {
     return <p>Broken again !</p>;
   }
@@ -35,22 +52,6 @@ export default function MoviesDetails() {
     return movies.runtime / 1.027;
   };
 
-  function hadleClick() {
-    if (trailerUrl) {
-      setTrailerUrl('');
-    } else {
-      const name =
-        movies?.name ||
-        movies?.original_name ||
-        movies?.title ||
-        movies?.original_title;
-      movieTrailer(name).then((url) => {
-        const urlParams = new URLSearchParams(new URL(url).search);
-        setTrailerUrl(urlParams.get('v'));
-      });
-    }
-  }
-
   return (
     <SMovieDetails>
       <div className='container'>
@@ -58,7 +59,7 @@ export default function MoviesDetails() {
           <h2>{movies.original_title}</h2>
           <img
             src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-            alt='avenger'
+            alt=''
           />
         </div>
         <div className='movie-infos'>
@@ -72,8 +73,7 @@ export default function MoviesDetails() {
           <p>Popularity : {movies.popularity}</p>
           <p>Score : {movies.vote_average}</p>
           {movies.release_date && <p>Release date: {movies.release_date}</p>}
-          <button onClick={() => hadleClick()}>See the Trailer</button>
-          {trailerUrl && <YouTube videoId={trailerUrl} />}
+          {trailerUrl && <YouTube className='youtube' videoId={trailerUrl} />}
         </div>
       </div>
     </SMovieDetails>
