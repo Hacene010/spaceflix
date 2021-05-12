@@ -18,9 +18,16 @@ export default function Header({ theme, setTheme }) {
       )}
       <div className='navbar'>
         <ul className='categories'>
-          <li className='movies'>MOVIES</li>
-          <li className='series'>SERIES</li>
-          <li className='documentaries'>DOCUMENTARIES</li>
+          <a href='#MoviesNasa'>
+            <li className='movies'>MOVIES</li>
+          </a>
+          <a href='#TvShow'>
+            <li className='series'>SERIES</li>
+          </a>
+          <a href='#Documentary'>
+            {' '}
+            <li className='documentaries'>DOCUMENTARIES</li>
+          </a>
         </ul>
       </div>
       <button className='button' type='button' onClick={changeTheme}>
