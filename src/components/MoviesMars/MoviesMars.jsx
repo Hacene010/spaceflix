@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import SMoviesMars from '../StyledComponents/Smovies';
 
 function MoviesMars() {
@@ -37,15 +38,17 @@ function MoviesMars() {
         {moviesMars.slice(startX, startX + 5).map((movie) => {
           return (
             <>
-              <li>
-                <div className='image'>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                    alt=''
-                  />
-                  <figcaption>{movie.original_title}</figcaption>
-                </div>
-              </li>
+              <Link to={`/${movie.id}`}>
+                <li>
+                  <div className='image'>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt=''
+                    />
+                    <figcaption>{movie.original_title}</figcaption>
+                  </div>
+                </li>
+              </Link>
             </>
           );
         })}
