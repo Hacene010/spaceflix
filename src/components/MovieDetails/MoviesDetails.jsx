@@ -73,7 +73,7 @@ export default function MoviesDetails() {
           <p>Score : {movies.vote_average}</p>
           {movies.release_date && <p>Release date: {movies.release_date}</p>}
           <button onClick={() => hadleClick()}>See the Trailer</button>
-          {trailerUrl && <YouTube videoId={trailerUrl} />}
+          {trailerUrl && <YouTube className='youtube' videoId={trailerUrl} />}
         </div>
       </div>
     </SMovieDetails>
